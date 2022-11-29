@@ -1,14 +1,30 @@
-# python print문 안에서 ,와 + 차이 숙지 필요!
-# + 는 concat같은 개념이라, 출력할 값을 이어붙이기 한것과 같음.
-# , 는 출력할 값이 각각 분리되어 있는 개념.
-def staircase(n):
-    # Write your code here
-    space = ' '
-    sharp = '#'
-    for i in range(1, n+1) :
-        print(space * (n - i) + sharp * i)
-        
-if __name__ == '__main__':
-    n = int(input().strip())
+import math
+import os
+import random
+import re
+import sys
 
-    staircase(n)
+#
+# Complete the 'miniMaxSum' function below.
+#
+# The function accepts INTEGER_ARRAY arr as parameter.
+#
+
+# Key Point
+# 1. arr에 5개  integer 값을 받는다
+# arr의 최대 합, 최소 합 구하기
+
+def miniMaxSum(arr):
+    # Write your code here
+    total_arr = sum(arr)
+    arr = sorted(arr)
+    max_arr = total_arr - arr[0]
+    min_arr = total_arr - arr[4]
+    
+    return print(min_arr, max_arr)
+    
+if __name__ == '__main__':
+
+    arr = list(map(int, input().rstrip().split()))
+
+    miniMaxSum(arr)
